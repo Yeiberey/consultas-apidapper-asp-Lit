@@ -1,0 +1,14 @@
+{
+  "name": "consultas-apidapper-asp-lit",
+  "version": "1.0.0",
+  "description": "Lit element",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yeiberey",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^2.7.5"
+  }
+}
