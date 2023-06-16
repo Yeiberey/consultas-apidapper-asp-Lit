@@ -1,5 +1,8 @@
-import { INCREMENTO, DECREMENTO } from "./action-types";
+import { RESET, INCREMENTO, DECREMENTO } from "./action-types";
 
+export const reset = () => {
+  return { type: RESET };
+};
 export const incremento = () => {
   return { type: INCREMENTO };
 };

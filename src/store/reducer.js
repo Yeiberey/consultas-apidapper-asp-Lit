@@ -1,4 +1,4 @@
-import { INCREMENTO, DECREMENTO } from "./action-types";
+import { RESET, INCREMENTO, DECREMENTO } from "./action-types";
 
 const initialState = {
   contador: 2,
@@ -6,6 +6,8 @@ const initialState = {
 
 export default function contador(state = initialState, { type, payload }) {
   switch (type) {
+    case RESET:
+      return { ...state, contador: 0 };
     case INCREMENTO:
       return { ...state, contador: ++state.contador };
     case DECREMENTO:

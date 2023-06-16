@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { connect } from "pwa-helpers";
 import store from "../store";
-import { incremento, decremento } from "../store/actions"; // Importa las acciones necesarias
+import { incremento, decremento, reset } from "../store/actions"; // Importa las acciones necesarias
 
 class CustomButton extends connect(store)(LitElement) {
   static get properties() {
@@ -26,7 +26,11 @@ class CustomButton extends connect(store)(LitElement) {
       <div>
         <input type="button" value="-1" @click="${this.decrementar}" />
         <input type="button" value="+1" @click="${this.incrementar}" />
+        <input type="button" value="reset" @click="${this.reset}" />
       </div>`;
+  }
+  reset() {
+    store.dispatch(reset());
   }
   incrementar() {
     store.dispatch(incremento());
