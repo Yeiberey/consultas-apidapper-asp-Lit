@@ -50,6 +50,14 @@ export class Contador extends connect(store)(LitElement) {
           text="1+"
           .action="${{handler: this.incrementar}}"
         ></custom-button>
+        <custom-button
+          text="2+"
+          .action="${{
+            handler: () => {
+              store.dispatch(incremento(2));
+            },
+          }}"
+        ></custom-button>
       </div>`;
   }
   reset() {

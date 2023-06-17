@@ -270,20 +270,22 @@ class Calculatora extends LitElement {
     if (!this.realTimeScreenValue) {
       this.realTimeScreenValue = [];
     }
-    if (!this.realTimeScreenValue.length && this.isOperador(value))
-      this.realTimeScreenValue.push(0);
-    if (
-      this.isOperador(value) &&
-      this.isOperador([
-        this.realTimeScreenValue[this.realTimeScreenValue.length - 1],
-      ])
-    ) {
-      this.realTimeScreenValue.pop();
+    if (this.realTimeScreenValue.length <= 15) {
+      if (!this.realTimeScreenValue.length && this.isOperador(value))
+        this.realTimeScreenValue.push(0);
+      if (
+        this.isOperador(value) &&
+        this.isOperador([
+          this.realTimeScreenValue[this.realTimeScreenValue.length - 1],
+        ])
+      ) {
+        this.realTimeScreenValue.pop();
+      }
+      this.realTimeScreenValue.push(value);
+      this.currentInput = this.realTimeScreenValue.join("");
+      this.handlerEvaluate();
+      this.handlerHideResult();
     }
-    this.realTimeScreenValue.push(value);
-    this.currentInput = this.realTimeScreenValue.join("");
-    this.handlerEvaluate();
-    this.handlerHideResult();
   }
   clear() {
     this.realTimeScreenValue = [];
