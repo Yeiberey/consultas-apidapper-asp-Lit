@@ -12,9 +12,11 @@ html {
   --spacing: 16px;
   margin: 0;
   padding: 0;
+  height: -webkit-fill-available;
 }
 
 body {
+  height: -webkit-fill-available;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
